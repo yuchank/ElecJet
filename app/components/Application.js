@@ -4,7 +4,8 @@ class Application extends Component {
 
   render() {
     return (
-      <button>
+      <button
+        className='button full-width'>
         Mark All As Unpacked
       </button>
     )
