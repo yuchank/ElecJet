@@ -1,10 +1,22 @@
 {
   "env": {
     "development": {
+      "presets": [
 
+      ],
+      "plugins": [
+
+      ],
+      "sourceMaps": ""
     },
     "production": {
-      
+      "presets": [
+
+      ],
+      "plugins": [
+
+      ],
+      "sourceMaps": ""
     }
   }
 }

@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/yuchank/ElecJet#readme",
   "dependencies": {
-    "electron-prebuilt-compile": "^3.0.6"
-  }
+    "electron-prebuilt-compile": "^3.0.6",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  },
+  "devDependencies": {}
 }
