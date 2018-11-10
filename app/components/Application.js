@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import NewItem from './NewItem'
+import Items from './Items'
 
 class Application extends Component {
   constructor(props) {
@@ -12,10 +14,13 @@ class Application extends Component {
     }
     this.addItem = this.addItem.bind(this)
     this.markAsPacked = this.markAsPacked.bind(this)
-    this.markAllAsUnpacked = this.markAllAsUnpacked(this)
+    this.markAllAsUnpacked = this.markAllAsUnpacked.bind(this)
   }
 
-  addItem(item) {}
+  addItem(item) {
+    this.setState({ items: [item, ...this.state.items] })
+  }
+
   markAsPacked(item) {
     const otherItems = this.state.items.filter(
       other => other.id !== item.id
@@ -23,6 +28,7 @@ class Application extends Component {
     const updatedItem = { ...item, packed: !item.packed }
     this.setState({ items: [updatedItem, ...otherItems] })
   }
+
   markAllAsUnpacked() {
     const items = this.state.items.map(item => ({ ...item, packed: false }))
     this.setState({ items })
@@ -35,7 +41,7 @@ class Application extends Component {
 
     return (
       <div className='Application'>
-        {/* To be implented: <NewItem /> */}
+        <NewItem onSubmit = { this.addItem } />
         <Items 
           title = 'Unpacked Items'
           items = { unpackedItems }
@@ -46,7 +52,10 @@ class Application extends Component {
           items = { packedItems }
           onCheckOff = { this.markAsPacked }
         />
-        <button className='button full-width' onClick={ this.markAllAsUnpacked }>
+        <button 
+          className="button full-width"
+          onClick = { this.markAllAsUnpacked }
+        >
           Mark All As Unpacked
         </button>
       </div>

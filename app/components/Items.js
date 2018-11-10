@@ -5,13 +5,15 @@ const Items = ({ title, items, onCheckOff }) => {
   return (
     <section className='Items'>
       <h2>{ title }</h2>
-      {items.map(item => (
-        <Item
-          key={item.id}
-          onCheckOff={() => onCheckOff(item)}
-          {...item}
-        />
-      ))}
+      {
+        items.map(item => (
+          <Item
+            key={item.id}
+            onCheckOff={() => onCheckOff(item)}
+            {...item}
+          />
+        ))
+      }
     </section>
 )}
 
