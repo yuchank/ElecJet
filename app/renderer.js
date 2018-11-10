@@ -1,10 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-const renderApplication = () => {
-  const Application = require('./components/Application').default
+import Application from './components/Application'
 
-  render(<Application />, document.getElementById('application'))
-}
+render(<Application />, document.getElementById('application'))
 
-renderApplication()
