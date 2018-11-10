@@ -36,8 +36,16 @@ class Application extends Component {
     return (
       <div className='Application'>
         {/* To be implented: <NewItem /> */}
-        {<Items title = 'Unpacked Items' />}
-        {<Items title = 'Packed Items' /> }
+        <Items 
+          title = 'Unpacked Items'
+          items = { unpackedItems }
+          onCheckOff = { this.markAsPacked } 
+        />
+        <Items 
+          title = 'Packed Items'
+          items = { packedItems }
+          onCheckOff = { this.markAsPacked }
+        />
         <button className='button full-width' onClick={ this.markAllAsUnpacked }>
           Mark All As Unpacked
         </button>
